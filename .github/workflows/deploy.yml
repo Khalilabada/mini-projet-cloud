@@ -23,3 +23,6 @@ jobs:
 
       - name: Push vers Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/todo-api:latest
+
+      - name: Lancer docker-compose
+        run: docker compose up -d
