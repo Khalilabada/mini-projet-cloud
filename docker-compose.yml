@@ -94,6 +94,15 @@ services:
     networks:
       - app-network
 
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    restart: always
+    ports:
+      - "9100:9100"
+    networks:
+      - app-network
+
 volumes:
   db-data:
   grafana-data:
@@ -101,7 +110,3 @@ volumes:
 networks:
   app-network:
     driver: bridge
-
-
-
-
